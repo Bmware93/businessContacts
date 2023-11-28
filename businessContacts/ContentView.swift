@@ -8,14 +8,43 @@
 import SwiftUI
 
 struct ContentView: View {
+    @StateObject private var vm = ContactViewModel()
+    @State var addContactSheetShowing = false
+    
     var body: some View {
-        VStack {
-            Image(systemName: "globe")
-                .imageScale(.large)
-                .foregroundColor(.accentColor)
-            Text("Hello, world!")
+        NavigationStack {
+            ZStack {
+                if vm.contacts.isEmpty {
+    
+                        Text("No Contacts to display")
+                            .foregroundColor(.secondary)
+                } else {
+                    
+                    List {
+                        ForEach(vm.contacts, id: \.self){ contact in
+                           ContactView(contact: contact)
+                            }
+                                                         
+                    }
+                    .listStyle(.plain)
+                    .listSectionSeparator(Visibility.hidden)
+                }
+            }
+            .navigationTitle("Business Contacts")
+            .toolbar {
+                Button {
+                    addContactSheetShowing.toggle()
+                } label: {
+                    Image(systemName: "plus")
+                }
+                .sheet(isPresented: $addContactSheetShowing) {
+                    AddNewContact()
+                        .environmentObject(vm)
+                }
+                
+            }
         }
-        .padding()
+        .environmentObject(vm)
     }
 }
 
