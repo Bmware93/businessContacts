@@ -14,6 +14,10 @@
 		1A1FA5F02A9922D500B268C7 /* businessContactsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A1FA5EF2A9922D500B268C7 /* businessContactsTests.swift */; };
 		1A1FA5FA2A9922D500B268C7 /* businessContactsUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A1FA5F92A9922D500B268C7 /* businessContactsUITests.swift */; };
 		1A1FA5FC2A9922D500B268C7 /* businessContactsUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A1FA5FB2A9922D500B268C7 /* businessContactsUITestsLaunchTests.swift */; };
+		1A1FA6092A99244A00B268C7 /* ContactView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A1FA6082A99244A00B268C7 /* ContactView.swift */; };
+		1A1FA60B2A9A4D2300B268C7 /* ContactModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A1FA60A2A9A4D2300B268C7 /* ContactModels.swift */; };
+		1A1FA60D2A9A76CE00B268C7 /* ContactViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A1FA60C2A9A76CE00B268C7 /* ContactViewModel.swift */; };
+		1A1FA60F2A9AA2EE00B268C7 /* AddNewContact.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A1FA60E2A9AA2ED00B268C7 /* AddNewContact.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -36,7 +40,7 @@
 /* Begin PBXFileReference section */
 		1A1FA5DA2A9922D300B268C7 /* businessContacts.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = businessContacts.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1A1FA5DD2A9922D300B268C7 /* businessContactsApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = businessContactsApp.swift; sourceTree = "<group>"; };
-		1A1FA5DF2A9922D300B268C7 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		1A1FA5DF2A9922D300B268C7 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
 		1A1FA5E12A9922D400B268C7 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		1A1FA5E42A9922D400B268C7 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		1A1FA5E62A9922D400B268C7 /* businessContacts.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = businessContacts.entitlements; sourceTree = "<group>"; };
@@ -45,6 +49,10 @@
 		1A1FA5F52A9922D500B268C7 /* businessContactsUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = businessContactsUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		1A1FA5F92A9922D500B268C7 /* businessContactsUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = businessContactsUITests.swift; sourceTree = "<group>"; };
 		1A1FA5FB2A9922D500B268C7 /* businessContactsUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = businessContactsUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		1A1FA6082A99244A00B268C7 /* ContactView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactView.swift; sourceTree = "<group>"; };
+		1A1FA60A2A9A4D2300B268C7 /* ContactModels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactModels.swift; sourceTree = "<group>"; };
+		1A1FA60C2A9A76CE00B268C7 /* ContactViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactViewModel.swift; sourceTree = "<group>"; };
+		1A1FA60E2A9AA2ED00B268C7 /* AddNewContact.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddNewContact.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -97,6 +105,10 @@
 			children = (
 				1A1FA5DD2A9922D300B268C7 /* businessContactsApp.swift */,
 				1A1FA5DF2A9922D300B268C7 /* ContentView.swift */,
+				1A1FA6082A99244A00B268C7 /* ContactView.swift */,
+				1A1FA60A2A9A4D2300B268C7 /* ContactModels.swift */,
+				1A1FA60C2A9A76CE00B268C7 /* ContactViewModel.swift */,
+				1A1FA60E2A9AA2ED00B268C7 /* AddNewContact.swift */,
 				1A1FA5E12A9922D400B268C7 /* Assets.xcassets */,
 				1A1FA5E62A9922D400B268C7 /* businessContacts.entitlements */,
 				1A1FA5E32A9922D400B268C7 /* Preview Content */,
@@ -193,7 +205,7 @@
 			attributes = {
 				BuildIndependentTargetsInParallel = 1;
 				LastSwiftUpdateCheck = 1430;
-				LastUpgradeCheck = 1430;
+				LastUpgradeCheck = 1500;
 				TargetAttributes = {
 					1A1FA5D92A9922D300B268C7 = {
 						CreatedOnToolsVersion = 14.3;
@@ -260,7 +272,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				1A1FA5E02A9922D300B268C7 /* ContentView.swift in Sources */,
+				1A1FA6092A99244A00B268C7 /* ContactView.swift in Sources */,
+				1A1FA60D2A9A76CE00B268C7 /* ContactViewModel.swift in Sources */,
+				1A1FA60B2A9A4D2300B268C7 /* ContactModels.swift in Sources */,
 				1A1FA5DE2A9922D300B268C7 /* businessContactsApp.swift in Sources */,
+				1A1FA60F2A9AA2EE00B268C7 /* AddNewContact.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -330,9 +346,11 @@
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				COPY_PHASE_STRIP = NO;
+				DEAD_CODE_STRIPPING = YES;
 				DEBUG_INFORMATION_FORMAT = dwarf;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_TESTABILITY = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu11;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_NO_COMMON_BLOCKS = YES;
@@ -390,9 +408,11 @@
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				COPY_PHASE_STRIP = NO;
+				DEAD_CODE_STRIPPING = YES;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu11;
 				GCC_NO_COMMON_BLOCKS = YES;
 				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
@@ -419,12 +439,14 @@
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				CURRENT_PROJECT_VERSION = 1;
+				DEAD_CODE_STRIPPING = YES;
 				DEVELOPMENT_ASSET_PATHS = "\"businessContacts/Preview Content\"";
 				DEVELOPMENT_TEAM = KY5FDC9N4H;
 				ENABLE_HARDENED_RUNTIME = YES;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/../Frameworks",
@@ -432,8 +454,12 @@
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = morganware.benia.businessContacts;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator macosx";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
 		};
@@ -446,12 +472,14 @@
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				CURRENT_PROJECT_VERSION = 1;
+				DEAD_CODE_STRIPPING = YES;
 				DEVELOPMENT_ASSET_PATHS = "\"businessContacts/Preview Content\"";
 				DEVELOPMENT_TEAM = KY5FDC9N4H;
 				ENABLE_HARDENED_RUNTIME = YES;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/../Frameworks",
@@ -459,8 +487,12 @@
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = morganware.benia.businessContacts;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator macosx";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;
 		};
@@ -471,6 +503,7 @@
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
+				DEAD_CODE_STRIPPING = YES;
 				DEVELOPMENT_TEAM = KY5FDC9N4H;
 				GENERATE_INFOPLIST_FILE = YES;
 				MACOSX_DEPLOYMENT_TARGET = 13.3;
@@ -490,6 +523,7 @@
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
+				DEAD_CODE_STRIPPING = YES;
 				DEVELOPMENT_TEAM = KY5FDC9N4H;
 				GENERATE_INFOPLIST_FILE = YES;
 				MACOSX_DEPLOYMENT_TARGET = 13.3;
@@ -508,6 +542,7 @@
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
+				DEAD_CODE_STRIPPING = YES;
 				DEVELOPMENT_TEAM = KY5FDC9N4H;
 				GENERATE_INFOPLIST_FILE = YES;
 				MARKETING_VERSION = 1.0;
@@ -525,6 +560,7 @@
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
+				DEAD_CODE_STRIPPING = YES;
 				DEVELOPMENT_TEAM = KY5FDC9N4H;
 				GENERATE_INFOPLIST_FILE = YES;
 				MARKETING_VERSION = 1.0;
