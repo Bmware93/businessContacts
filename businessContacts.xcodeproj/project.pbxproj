@@ -53,6 +53,7 @@
 		1A1FA60A2A9A4D2300B268C7 /* ContactModels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactModels.swift; sourceTree = "<group>"; };
 		1A1FA60C2A9A76CE00B268C7 /* ContactViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactViewModel.swift; sourceTree = "<group>"; };
 		1A1FA60E2A9AA2ED00B268C7 /* AddNewContact.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddNewContact.swift; sourceTree = "<group>"; };
+		1AF4EFB62B1929D200027548 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -103,6 +104,7 @@
 		1A1FA5DC2A9922D300B268C7 /* businessContacts */ = {
 			isa = PBXGroup;
 			children = (
+				1AF4EFB62B1929D200027548 /* Info.plist */,
 				1A1FA5DD2A9922D300B268C7 /* businessContactsApp.swift */,
 				1A1FA5DF2A9922D300B268C7 /* ContentView.swift */,
 				1A1FA6082A99244A00B268C7 /* ContactView.swift */,
@@ -445,8 +447,9 @@
 				ENABLE_HARDENED_RUNTIME = YES;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = businessContacts/Info.plist;
 				INFOPLIST_KEY_NSHumanReadableCopyright = "";
-				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/../Frameworks",
@@ -478,8 +481,9 @@
 				ENABLE_HARDENED_RUNTIME = YES;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = businessContacts/Info.plist;
 				INFOPLIST_KEY_NSHumanReadableCopyright = "";
-				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/../Frameworks",
