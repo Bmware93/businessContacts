@@ -13,36 +13,40 @@ struct ContentView: View {
     
     var body: some View {
         NavigationStack {
-            ZStack {
-                if vm.contacts.isEmpty {
-    
-                        Text("No Contacts to display")
-                            .foregroundColor(.secondary)
-                } else {
-                    
-                    List {
-                        ForEach(vm.contacts, id: \.self){ contact in
-                           ContactView(contact: contact)
-                            }
-                                                         
-                    }
-                    .listStyle(.plain)
-                    .listSectionSeparator(Visibility.hidden)
-                }
-            }
-            .navigationTitle("Business Contacts")
-            .toolbar {
-                Button {
-                    addContactSheetShowing.toggle()
-                } label: {
-                    Image(systemName: "plus")
-                }
-                .sheet(isPresented: $addContactSheetShowing) {
-                    AddNewContact()
-                        .environmentObject(vm)
+            List {
+                ForEach(vm.contacts, id: \.self){ contact in
+                    ContactView(contact: contact)
                 }
                 
             }
+            .listStyle(.plain)
+            .listSectionSeparator(Visibility.hidden)
+            .navigationTitle("Business Contacts")
+            .toolbar {
+                Button("Add Contact", systemImage: "plus") {
+                    addContactSheetShowing.toggle()
+                }
+                .sheet(isPresented: $addContactSheetShowing) {
+                    AddNewContact()
+                       // .environmentObject(vm)
+                }
+                
+            }
+            .overlay {
+                if vm.contacts.isEmpty {
+                    ContentUnavailableView(label: {
+                        Label("No Contacts to Display", systemImage: "person.fill.questionmark")
+                    }, description: {
+                        Text("Add a new contact to see your list")
+                    }, actions: {
+                        Button("Add New Contact") {
+                            addContactSheetShowing.toggle()
+                        }
+                    })
+                    .offset(y: -60)
+                }
+            }
+            
         }
         .environmentObject(vm)
     }
