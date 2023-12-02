@@ -8,7 +8,8 @@
 import SwiftUI
 
 struct AddNewContact: View {
-    @EnvironmentObject var viewModel: ContactViewModel
+    //@EnvironmentObject var viewModel: ContactViewModel
+    @Environment(\.modelContext) var context
     
     
     @Environment(\.dismiss) private var dismiss
@@ -48,7 +49,7 @@ struct AddNewContact: View {
                     }
                     .padding(.top)
                     .padding(.leading)
-                    .keyboardType(.default)
+                    //.keyboardType(.default)
                     .textFieldStyle(.roundedBorder)
                     .autocorrectionDisabled()
                    
@@ -61,9 +62,11 @@ struct AddNewContact: View {
                                 if isFormValid {
                                     let newContact = Contact(name: name, email: email, company: company)
                                     
-                                    viewModel.newContact = newContact
+                                    context.insert(newContact)
                                     
-                                    viewModel.saveContact()
+//                                    viewModel.newContact = newContact
+//                                    
+//                                    viewModel.saveContact()
                                     
                                     dismiss()
                                 }
