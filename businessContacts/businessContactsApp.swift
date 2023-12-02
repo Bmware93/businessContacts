@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import SwiftData
 
 @main
 struct businessContactsApp: App {
@@ -13,5 +14,6 @@ struct businessContactsApp: App {
         WindowGroup {
            ContentView()
         }
+        .modelContainer(for: Contact.self)
     }
 }
