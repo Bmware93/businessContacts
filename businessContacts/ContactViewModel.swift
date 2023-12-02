@@ -8,18 +8,18 @@
 import Foundation
 import SwiftUI
 
-class ContactViewModel: ObservableObject, Identifiable {
-    @Published var contacts = [Contact]()
-    
-    var newContact: Contact?
-    
-    func saveContact() {
-        if let newContact = newContact {
-            contacts.append(newContact)
-        }
-    
-        
-    }
-}
+//class ContactViewModel: ObservableObject, Identifiable {
+//    @Published var contacts = [Contact]()
+//    
+//    var newContact: Contact?
+//    
+//    func saveContact() {
+//        if let newContact = newContact {
+//            contacts.append(newContact)
+//        }
+//    
+//        
+//    }
+//}
 
 

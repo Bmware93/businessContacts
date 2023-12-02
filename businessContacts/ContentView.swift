@@ -6,34 +6,43 @@
 //
 
 import SwiftUI
+import SwiftData
 
 struct ContentView: View {
-    @StateObject private var vm = ContactViewModel()
+    //@StateObject private var vm = ContactViewModel()
     @State var addContactSheetShowing = false
+    @Environment(\.modelContext) var context
+    @Query(sort: \Contact.name) var contacts: [Contact]
+    
     
     var body: some View {
         NavigationStack {
             List {
-                ForEach(vm.contacts, id: \.self){ contact in
+                ForEach(contacts) { contact in
                     ContactView(contact: contact)
+                }
+                .onDelete { indexSet in
+                    for index in indexSet {
+                        context.delete(contacts[index])
+                    }
                 }
                 
             }
             .listStyle(.plain)
             .listSectionSeparator(Visibility.hidden)
             .navigationTitle("Business Contacts")
+            .sheet(isPresented: $addContactSheetShowing) { AddNewContact() }
             .toolbar {
-                Button("Add Contact", systemImage: "plus") {
-                    addContactSheetShowing.toggle()
-                }
-                .sheet(isPresented: $addContactSheetShowing) {
-                    AddNewContact()
-                       // .environmentObject(vm)
+                if !contacts.isEmpty {
+                    Button("Add Contact", systemImage: "plus") {
+                        addContactSheetShowing.toggle()
+                    }
+               
                 }
                 
             }
             .overlay {
-                if vm.contacts.isEmpty {
+                if contacts.isEmpty {
                     ContentUnavailableView(label: {
                         Label("No Contacts to Display", systemImage: "person.fill.questionmark")
                     }, description: {
@@ -48,7 +57,7 @@ struct ContentView: View {
             }
             
         }
-        .environmentObject(vm)
+        //.environmentObject(vm)
     }
 }
 

@@ -6,8 +6,11 @@
 //
 
 import SwiftUI
+import SwiftData
 
 struct ContactView: View {
+    //@Environment(\.modelContext) var context
+    
     let contact: Contact
     
     var body: some View {
@@ -26,8 +29,6 @@ struct ContactView: View {
     }
 }
 
-struct ContactView_Previews: PreviewProvider {
-    static var previews: some View {
-        ContactView(contact: .init(name: "Benia Morgan", email: "bmorganware@gmail.com", company: "None"))
-    }
+#Preview {
+    ContactView(contact: Contact(name: "Benia Morgan", email: "bmorganware@gmail.com", company: "Apple"))
 }
