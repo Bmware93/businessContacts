@@ -12,7 +12,9 @@ struct ContentView: View {
     //@StateObject private var vm = ContactViewModel()
     @State var addContactSheetShowing = false
     @Environment(\.modelContext) var context
-    @Query(sort: \Contact.name) var contacts: [Contact]
+    @Query(sort: \Contact.name) var contacts: [Contact] 
+    
+    @State private var contactToEdit: Contact?
     
     
     var body: some View {
@@ -20,6 +22,9 @@ struct ContentView: View {
             List {
                 ForEach(contacts) { contact in
                     ContactView(contact: contact)
+                        .onTapGesture {
+                            contactToEdit = contact
+                        }
                 }
                 .onDelete { indexSet in
                     for index in indexSet {
@@ -32,6 +37,9 @@ struct ContentView: View {
             .listSectionSeparator(Visibility.hidden)
             .navigationTitle("Business Contacts")
             .sheet(isPresented: $addContactSheetShowing) { AddNewContact() }
+            .sheet(item: $contactToEdit) { contact in
+                UpdateContactView(contact: contact)
+            }
             .toolbar {
                 if !contacts.isEmpty {
                     Button("Add Contact", systemImage: "plus") {

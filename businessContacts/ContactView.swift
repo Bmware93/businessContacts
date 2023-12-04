@@ -9,7 +9,7 @@ import SwiftUI
 import SwiftData
 
 struct ContactView: View {
-    //@Environment(\.modelContext) var context
+    @Environment(\.modelContext) var context
     
     let contact: Contact
     
