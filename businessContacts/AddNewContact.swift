@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import SwiftData
 
 struct AddNewContact: View {
     //@EnvironmentObject var viewModel: ContactViewModel
@@ -39,18 +40,19 @@ struct AddNewContact: View {
                     //Spacer()
                     
                     VStack {
-                        TextField("Full Name", text: $name, prompt: Text("Full Name"))
+                        Form {
+                            TextField("Full Name", text: $name)
                             
-                       
-                        TextField("Email", text: $email, prompt: Text("Email"))
-                       
-                        TextField("Company", text: $company, prompt: Text("Company"))
-                        
+                            TextField("Email", text: $email)
+                                .keyboardType(.emailAddress)
+                            
+                            TextField("Company", text: $company)
+                        }
                     }
                     .padding(.top)
-                    .padding(.leading)
+                    //.padding(.leading)
                     //.keyboardType(.default)
-                    .textFieldStyle(.roundedBorder)
+                    //.textFieldStyle(.roundedBorder)
                     .autocorrectionDisabled()
                    
                     

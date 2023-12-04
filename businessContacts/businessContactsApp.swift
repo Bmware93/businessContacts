@@ -14,6 +14,6 @@ struct businessContactsApp: App {
         WindowGroup {
            ContentView()
         }
-        .modelContainer(for: Contact.self)
+        .modelContainer(for: [Contact.self])
     }
 }

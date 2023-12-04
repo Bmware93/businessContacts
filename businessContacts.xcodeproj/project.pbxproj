@@ -18,6 +18,7 @@
 		1A1FA60B2A9A4D2300B268C7 /* ContactModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A1FA60A2A9A4D2300B268C7 /* ContactModels.swift */; };
 		1A1FA60D2A9A76CE00B268C7 /* ContactViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A1FA60C2A9A76CE00B268C7 /* ContactViewModel.swift */; };
 		1A1FA60F2A9AA2EE00B268C7 /* AddNewContact.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A1FA60E2A9AA2ED00B268C7 /* AddNewContact.swift */; };
+		1A23BFE22B1D453F00F60FC4 /* UpdateContactView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A23BFE12B1D453F00F60FC4 /* UpdateContactView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -53,6 +54,7 @@
 		1A1FA60A2A9A4D2300B268C7 /* ContactModels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactModels.swift; sourceTree = "<group>"; };
 		1A1FA60C2A9A76CE00B268C7 /* ContactViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactViewModel.swift; sourceTree = "<group>"; };
 		1A1FA60E2A9AA2ED00B268C7 /* AddNewContact.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddNewContact.swift; sourceTree = "<group>"; };
+		1A23BFE12B1D453F00F60FC4 /* UpdateContactView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpdateContactView.swift; sourceTree = "<group>"; };
 		1AF4EFB62B1929D200027548 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -111,6 +113,7 @@
 				1A1FA60A2A9A4D2300B268C7 /* ContactModels.swift */,
 				1A1FA60C2A9A76CE00B268C7 /* ContactViewModel.swift */,
 				1A1FA60E2A9AA2ED00B268C7 /* AddNewContact.swift */,
+				1A23BFE12B1D453F00F60FC4 /* UpdateContactView.swift */,
 				1A1FA5E12A9922D400B268C7 /* Assets.xcassets */,
 				1A1FA5E62A9922D400B268C7 /* businessContacts.entitlements */,
 				1A1FA5E32A9922D400B268C7 /* Preview Content */,
@@ -278,6 +281,7 @@
 				1A1FA60D2A9A76CE00B268C7 /* ContactViewModel.swift in Sources */,
 				1A1FA60B2A9A4D2300B268C7 /* ContactModels.swift in Sources */,
 				1A1FA5DE2A9922D300B268C7 /* businessContactsApp.swift in Sources */,
+				1A23BFE22B1D453F00F60FC4 /* UpdateContactView.swift in Sources */,
 				1A1FA60F2A9AA2EE00B268C7 /* AddNewContact.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -448,6 +452,7 @@
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = businessContacts/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = "";
 				INFOPLIST_KEY_LSApplicationCategoryType = "";
 				INFOPLIST_KEY_NSHumanReadableCopyright = "";
 				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
@@ -483,6 +488,7 @@
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = businessContacts/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = "";
 				INFOPLIST_KEY_LSApplicationCategoryType = "";
 				INFOPLIST_KEY_NSHumanReadableCopyright = "";
 				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
