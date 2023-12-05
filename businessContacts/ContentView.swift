@@ -19,51 +19,61 @@ struct ContentView: View {
     
     var body: some View {
         NavigationStack {
-            List {
-                ForEach(contacts) { contact in
-                    ContactView(contact: contact)
-                        .onTapGesture {
-                            contactToEdit = contact
+            VStack {
+                List {
+                    ForEach(contacts) { contact in
+                        ContactView(contact: contact)
+                            .onTapGesture {
+                                contactToEdit = contact
+                            }
+                    }
+                    .onDelete { indexSet in
+                        for index in indexSet {
+                            context.delete(contacts[index])
                         }
-                }
-                .onDelete { indexSet in
-                    for index in indexSet {
-                        context.delete(contacts[index])
+                            
                     }
-                        
+                    
                 }
-                
-            }
-            .listStyle(.plain)
-            .listSectionSeparator(Visibility.hidden)
-            .navigationTitle("Business Contacts")
-            .sheet(isPresented: $addContactSheetShowing) { AddNewContact() }
-            .sheet(item: $contactToEdit) { contact in
-                UpdateContactView(contact: contact)
-            }
-            .toolbar {
-                if !contacts.isEmpty {
-                    Button("Add Contact", systemImage: "plus") {
-                        addContactSheetShowing.toggle()
-                    }
-               
+                .listStyle(.plain)
+                .listSectionSeparator(Visibility.hidden)
+                .navigationTitle("Business Contacts")
+                .sheet(isPresented: $addContactSheetShowing) { AddNewContact() }
+                .sheet(item: $contactToEdit) { contact in
+                    UpdateContactView(contact: contact)
                 }
-                
-            }
-            .overlay {
-                if contacts.isEmpty {
-                    ContentUnavailableView(label: {
-                        Label("No Contacts to Display", systemImage: "person.fill.questionmark")
-                    }, description: {
-                        Text("Add a new contact to see your list")
-                    }, actions: {
-                        Button("Add New Contact") {
+                .toolbar {
+                    if !contacts.isEmpty {
+                        Button("Add Contact", systemImage: "plus") {
                             addContactSheetShowing.toggle()
                         }
-                    })
-                    .offset(y: -60)
+                   
+                    }
+                    
+                }
+                .overlay {
+                    if contacts.isEmpty {
+                        ContentUnavailableView(label: {
+                            Label("No Contacts to Display", systemImage: "person.fill.questionmark")
+                        }, description: {
+                            Text("Add a new contact to see your list")
+                        }, actions: {
+                            Button("Add New Contact") {
+                                addContactSheetShowing.toggle()
+                            }
+                        })
+                        .offset(y: -60)
+                    }
+            }
+                if !contacts.isEmpty {
+                    Text("\(contacts.count) Contacts")
+                        .bold()
+                    
+                    Spacer()
                 }
             }
+            
+            
             
         }
    
