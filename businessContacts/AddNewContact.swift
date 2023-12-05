@@ -61,17 +61,17 @@ struct AddNewContact: View {
                     .toolbar {
                         ToolbarItem(placement: .navigationBarTrailing) {
                             Button("Done") {
-                                if isFormValid {
-                                    let newContact = Contact(name: name, email: email, company: company)
-                                    
-                                    context.insert(newContact)
-                                    
-//                                    viewModel.newContact = newContact
-//                                    
-//                                    viewModel.saveContact()
-                                    
-                                    dismiss()
+                                withAnimation {
+                                    if isFormValid {
+                                        let newContact = Contact(name: name, email: email, company: company)
+                                        
+                                        context.insert(newContact)
+                                        
+                                        dismiss()
+                                    }
                                 }
+                                
+                                
                                 
                             }
                             .bold()

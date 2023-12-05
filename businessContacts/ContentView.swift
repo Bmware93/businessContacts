@@ -16,7 +16,6 @@ struct ContentView: View {
     
     @State private var contactToEdit: Contact?
     
-    
     var body: some View {
         NavigationStack {
             List {
@@ -30,6 +29,7 @@ struct ContentView: View {
                     for index in indexSet {
                         context.delete(contacts[index])
                     }
+                        
                 }
                 
             }
