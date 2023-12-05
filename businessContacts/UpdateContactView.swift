@@ -8,6 +8,7 @@
 import SwiftUI
 import SwiftData
 
+
 struct UpdateContactView: View {
     
     @Environment(\.modelContext) var context
@@ -16,8 +17,9 @@ struct UpdateContactView: View {
     @Environment(\.dismiss) private var dismiss
     @Bindable var contact: Contact
     
-    var isFormValid: Bool {
-        return !contact.name.isEmpty && !contact.email.isEmpty && !contact.company.isEmpty
+    
+   var isFormValid: Bool {
+       return !contact.name!.isEmpty && !contact.email!.isEmpty && !contact.company!.isEmpty
     }
     
     var body: some View {
@@ -38,37 +40,27 @@ struct UpdateContactView: View {
                     
                     VStack {
                         Form {
-                            TextField("Full Name", text: $contact.name)
+                            TextField("Full Name", text: $contact.name.defaultValue("Unknown"))
                             
-                            TextField("Email", text: $contact.email)
+                            TextField("Email", text: $contact.email.defaultValue("Unknown"))
                                 .keyboardType(.emailAddress)
                             
-                            TextField("Company", text: $contact.company)
+                            TextField("Company", text: $contact.company.defaultValue("Unknown"))
                         }
                     }
                     .padding(.top)
                     .autocorrectionDisabled()
-                    
                     
                     Spacer()
                     
                         .toolbar {
                             ToolbarItem(placement: .navigationBarTrailing) {
                                 Button("Done") {
-                                    if isFormValid {
-                                        dismiss()
-                                    }
                                     
+                                        dismiss()
                                 }
                                 .bold()
                                 .disabled(!isFormValid)
-                                
-                            }
-                            ToolbarItem(placement: .navigationBarLeading) {
-                                Button("Cancel") {
-                                    dismiss()
-                                }
-                                
                             }
                         }
                 }
@@ -76,6 +68,16 @@ struct UpdateContactView: View {
                 .navigationBarTitleDisplayMode(.inline)
             }
             
+        }
+    }
+}
+
+extension Binding {
+    public func defaultValue<T>(_ value: T) -> Binding<T> where Value == Optional<T> {
+        Binding<T> {
+            wrappedValue ?? value
+        } set: {
+            wrappedValue = $0
         }
     }
 }

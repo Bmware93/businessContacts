@@ -15,10 +15,10 @@ struct ContactView: View {
     
     var body: some View {
         VStack(alignment: .leading, spacing: 3) {
-            Text("**Name:** \(contact.name)")
-            Text("**Email:** \(contact.email)")
+            Text("**Name:** \(contact.name ?? "Unknown")")
+            Text("**Email:** \(contact.email ?? "Unknown")")
             Divider()
-            Text("**Company:** \(contact.company)")
+            Text("**Company:** \(contact.company ?? "Unknown")")
         
         }
         .frame(maxWidth: .infinity,
