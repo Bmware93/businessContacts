@@ -9,7 +9,7 @@ import SwiftUI
 import SwiftData
 
 struct AddNewContact: View {
-    //@EnvironmentObject var viewModel: ContactViewModel
+
     @Environment(\.modelContext) var context
     
     
@@ -50,9 +50,6 @@ struct AddNewContact: View {
                         }
                     }
                     .padding(.top)
-                    //.padding(.leading)
-                    //.keyboardType(.default)
-                    //.textFieldStyle(.roundedBorder)
                     .autocorrectionDisabled()
                    
                     
@@ -70,8 +67,6 @@ struct AddNewContact: View {
                                         dismiss()
                                     }
                                 }
-                                
-                                
                                 
                             }
                             .bold()

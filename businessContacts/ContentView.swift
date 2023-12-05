@@ -8,8 +8,9 @@
 import SwiftUI
 import SwiftData
 
+
 struct ContentView: View {
-    //@StateObject private var vm = ContactViewModel()
+    
     @State var addContactSheetShowing = false
     @Environment(\.modelContext) var context
     @Query(sort: \Contact.name) var contacts: [Contact] 
@@ -65,7 +66,7 @@ struct ContentView: View {
             }
             
         }
-        //.environmentObject(vm)
+   
     }
 }
 

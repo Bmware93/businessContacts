@@ -16,7 +16,6 @@
 		1A1FA5FC2A9922D500B268C7 /* businessContactsUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A1FA5FB2A9922D500B268C7 /* businessContactsUITestsLaunchTests.swift */; };
 		1A1FA6092A99244A00B268C7 /* ContactView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A1FA6082A99244A00B268C7 /* ContactView.swift */; };
 		1A1FA60B2A9A4D2300B268C7 /* ContactModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A1FA60A2A9A4D2300B268C7 /* ContactModels.swift */; };
-		1A1FA60D2A9A76CE00B268C7 /* ContactViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A1FA60C2A9A76CE00B268C7 /* ContactViewModel.swift */; };
 		1A1FA60F2A9AA2EE00B268C7 /* AddNewContact.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A1FA60E2A9AA2ED00B268C7 /* AddNewContact.swift */; };
 		1A23BFE22B1D453F00F60FC4 /* UpdateContactView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A23BFE12B1D453F00F60FC4 /* UpdateContactView.swift */; };
 /* End PBXBuildFile section */
@@ -52,7 +51,6 @@
 		1A1FA5FB2A9922D500B268C7 /* businessContactsUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = businessContactsUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		1A1FA6082A99244A00B268C7 /* ContactView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactView.swift; sourceTree = "<group>"; };
 		1A1FA60A2A9A4D2300B268C7 /* ContactModels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactModels.swift; sourceTree = "<group>"; };
-		1A1FA60C2A9A76CE00B268C7 /* ContactViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactViewModel.swift; sourceTree = "<group>"; };
 		1A1FA60E2A9AA2ED00B268C7 /* AddNewContact.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddNewContact.swift; sourceTree = "<group>"; };
 		1A23BFE12B1D453F00F60FC4 /* UpdateContactView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpdateContactView.swift; sourceTree = "<group>"; };
 		1AF4EFB62B1929D200027548 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
@@ -111,7 +109,6 @@
 				1A1FA5DF2A9922D300B268C7 /* ContentView.swift */,
 				1A1FA6082A99244A00B268C7 /* ContactView.swift */,
 				1A1FA60A2A9A4D2300B268C7 /* ContactModels.swift */,
-				1A1FA60C2A9A76CE00B268C7 /* ContactViewModel.swift */,
 				1A1FA60E2A9AA2ED00B268C7 /* AddNewContact.swift */,
 				1A23BFE12B1D453F00F60FC4 /* UpdateContactView.swift */,
 				1A1FA5E12A9922D400B268C7 /* Assets.xcassets */,
@@ -278,7 +275,6 @@
 			files = (
 				1A1FA5E02A9922D300B268C7 /* ContentView.swift in Sources */,
 				1A1FA6092A99244A00B268C7 /* ContactView.swift in Sources */,
-				1A1FA60D2A9A76CE00B268C7 /* ContactViewModel.swift in Sources */,
 				1A1FA60B2A9A4D2300B268C7 /* ContactModels.swift in Sources */,
 				1A1FA5DE2A9922D300B268C7 /* businessContactsApp.swift in Sources */,
 				1A23BFE22B1D453F00F60FC4 /* UpdateContactView.swift in Sources */,
