@@ -84,5 +84,6 @@ extension Binding {
 
 #Preview {
     UpdateContactView(contact: Contact(name: "Benia", email: "bmorganware", company: "Apple"))
+    
 }
 

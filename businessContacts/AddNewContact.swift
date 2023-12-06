@@ -25,8 +25,8 @@ struct AddNewContact: View {
     var body: some View {
         NavigationStack {
             ZStack {
-                Color.gray.opacity(0.1)
-                    .ignoresSafeArea()
+            Color.gray.opacity(0.1)
+                    .ignoresSafeArea(.all)
                 
                 VStack {
                     Image(systemName:"person.crop.circle.fill")
@@ -34,12 +34,13 @@ struct AddNewContact: View {
                         .foregroundColor(.gray)
                         .padding(.top, 30)
                     
-                    Text("Add Photo")
-                        .font(.caption)
+                    Button("Add Photo") {
+                        
+                    }
                     
-                    //Spacer()
+                        //.font(.caption)
                     
-                    VStack {
+
                         Form {
                             TextField("Full Name", text: $name)
                             
@@ -48,10 +49,8 @@ struct AddNewContact: View {
                             
                             TextField("Company", text: $company)
                         }
-                    }
                     .padding(.top)
                     .autocorrectionDisabled()
-                   
                     
                     Spacer()
                     
