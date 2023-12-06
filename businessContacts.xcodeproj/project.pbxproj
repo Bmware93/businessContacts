@@ -18,6 +18,7 @@
 		1A1FA60B2A9A4D2300B268C7 /* ContactModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A1FA60A2A9A4D2300B268C7 /* ContactModels.swift */; };
 		1A1FA60F2A9AA2EE00B268C7 /* AddNewContact.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A1FA60E2A9AA2ED00B268C7 /* AddNewContact.swift */; };
 		1A23BFE22B1D453F00F60FC4 /* UpdateContactView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A23BFE12B1D453F00F60FC4 /* UpdateContactView.swift */; };
+		1A23BFE42B20FDFE00F60FC4 /* SearchBarFilterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A23BFE32B20FDFE00F60FC4 /* SearchBarFilterView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -53,6 +54,7 @@
 		1A1FA60A2A9A4D2300B268C7 /* ContactModels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactModels.swift; sourceTree = "<group>"; };
 		1A1FA60E2A9AA2ED00B268C7 /* AddNewContact.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddNewContact.swift; sourceTree = "<group>"; };
 		1A23BFE12B1D453F00F60FC4 /* UpdateContactView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpdateContactView.swift; sourceTree = "<group>"; };
+		1A23BFE32B20FDFE00F60FC4 /* SearchBarFilterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchBarFilterView.swift; sourceTree = "<group>"; };
 		1AF4EFB62B1929D200027548 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -111,6 +113,7 @@
 				1A1FA60A2A9A4D2300B268C7 /* ContactModels.swift */,
 				1A1FA60E2A9AA2ED00B268C7 /* AddNewContact.swift */,
 				1A23BFE12B1D453F00F60FC4 /* UpdateContactView.swift */,
+				1A23BFE32B20FDFE00F60FC4 /* SearchBarFilterView.swift */,
 				1A1FA5E12A9922D400B268C7 /* Assets.xcassets */,
 				1A1FA5E62A9922D400B268C7 /* businessContacts.entitlements */,
 				1A1FA5E32A9922D400B268C7 /* Preview Content */,
@@ -273,6 +276,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1A23BFE42B20FDFE00F60FC4 /* SearchBarFilterView.swift in Sources */,
 				1A1FA5E02A9922D300B268C7 /* ContentView.swift in Sources */,
 				1A1FA6092A99244A00B268C7 /* ContactView.swift in Sources */,
 				1A1FA60B2A9A4D2300B268C7 /* ContactModels.swift in Sources */,

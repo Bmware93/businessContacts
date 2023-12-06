@@ -16,6 +16,17 @@ struct ContentView: View {
     @Query(sort: \Contact.name) var contacts: [Contact] 
     
     @State private var contactToEdit: Contact?
+    @State private var searchText = ""
+    
+    var searchResults: [Contact] {
+        if searchText.isEmpty {
+            return contacts
+        } else {
+            return contacts.filter{$0.name!.contains(searchText)}
+        }
+    }
+ 
+  
     
     var body: some View {
         NavigationStack {
@@ -38,6 +49,7 @@ struct ContentView: View {
                 .listStyle(.plain)
                 .listSectionSeparator(Visibility.hidden)
                 .navigationTitle("Business Contacts")
+                .searchable(text: $searchText)
                 .sheet(isPresented: $addContactSheetShowing) { AddNewContact() }
                 .sheet(item: $contactToEdit) { contact in
                     UpdateContactView(contact: contact)
@@ -71,11 +83,14 @@ struct ContentView: View {
                     
                     Spacer()
                 }
+            
+                    
             }
             
             
             
         }
+        
    
     }
 }
