@@ -34,8 +34,12 @@ struct UpdateContactView: View {
                         .foregroundColor(.gray)
                         .padding(.top, 30)
                     
-                    Text("Add Photo")
-                        .font(.caption)
+                    Button("Add Photo") {
+                        //Code to update photo to go here
+                    }
+                    .buttonStyle(.bordered)
+                    .buttonBorderShape(.capsule)
+                        
                     
                     
                     VStack {

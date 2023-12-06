@@ -33,7 +33,7 @@ struct AddNewContact: View {
                         .font(.system(size: 130))
                         .foregroundColor(.gray)
                         .padding(.top, 30)
-                        .padding(.bottom, 15)
+
                     
                     Button("Add Photo") {
                         //code to add photo to go here
