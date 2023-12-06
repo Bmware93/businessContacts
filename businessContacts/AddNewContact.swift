@@ -9,7 +9,7 @@ import SwiftUI
 import SwiftData
 
 struct AddNewContact: View {
-
+    
     @Environment(\.modelContext) var context
     
     
@@ -25,7 +25,7 @@ struct AddNewContact: View {
     var body: some View {
         NavigationStack {
             ZStack {
-            Color.gray.opacity(0.1)
+                Color.gray.opacity(0.1)
                     .ignoresSafeArea(.all)
                 
                 VStack {
@@ -33,57 +33,57 @@ struct AddNewContact: View {
                         .font(.system(size: 130))
                         .foregroundColor(.gray)
                         .padding(.top, 30)
+                        .padding(.bottom, 15)
                     
                     Button("Add Photo") {
-                        
+                        //code to add photo to go here
                     }
+                    .buttonStyle(.bordered)
+                    .buttonBorderShape(.capsule)
                     
-                        //.font(.caption)
-                    
-
-                        Form {
-                            TextField("Full Name", text: $name)
-                            
-                            TextField("Email", text: $email)
-                                .keyboardType(.emailAddress)
-                            
-                            TextField("Company", text: $company)
-                        }
+                    Form {
+                        TextField("Full Name", text: $name)
+                        
+                        TextField("Email", text: $email)
+                            .keyboardType(.emailAddress)
+                        
+                        TextField("Company", text: $company)
+                    }
                     .padding(.top)
                     .autocorrectionDisabled()
                     
                     Spacer()
                     
-                    .toolbar {
-                        ToolbarItem(placement: .navigationBarTrailing) {
-                            Button("Done") {
-                                withAnimation {
-                                    if isFormValid {
-                                        let newContact = Contact(name: name, email: email, company: company)
-                                        
-                                        context.insert(newContact)
-                                        
-                                        dismiss()
+                        .toolbar {
+                            ToolbarItem(placement: .navigationBarTrailing) {
+                                Button("Done") {
+                                    withAnimation {
+                                        if isFormValid {
+                                            let newContact = Contact(name: name, email: email, company: company)
+                                            
+                                            context.insert(newContact)
+                                            
+                                            dismiss()
+                                        }
                                     }
+                                    
+                                }
+                                .bold()
+                                .disabled(!isFormValid)
+                                
+                            }
+                            ToolbarItem(placement: .navigationBarLeading) {
+                                Button("Cancel") {
+                                    dismiss()
                                 }
                                 
                             }
-                            .bold()
-                            .disabled(!isFormValid)
-                            
                         }
-                            ToolbarItem(placement: .navigationBarLeading) {
-                                Button("Cancel") {
-                                   dismiss()
-                            }
-                                
-                        }
-                    }
                 }
                 .navigationTitle("New Contact")
-            .navigationBarTitleDisplayMode(.inline)
+                .navigationBarTitleDisplayMode(.inline)
             }
-           
+            
         }
     }
 }
