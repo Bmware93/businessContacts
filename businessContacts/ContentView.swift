@@ -23,8 +23,8 @@ struct ContentView: View {
             return contacts
         } else {
             return contacts.filter { contact in
-                let nameMatch = contact.name?.localizedCaseInsensitiveContains(searchText) ?? false
-                let companyMatch = contact.company?.localizedCaseInsensitiveContains(searchText) ?? false
+                let nameMatch = contact.name?.localizedStandardContains(searchText) ?? false
+                let companyMatch = contact.company?.localizedStandardContains(searchText) ?? false
                 return nameMatch || companyMatch
             }
         }
@@ -91,10 +91,7 @@ struct ContentView: View {
                     Spacer()
                 }
                 
-                
             }
-            
-            
             
         }
         

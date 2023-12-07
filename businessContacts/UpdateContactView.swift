@@ -58,10 +58,12 @@ struct UpdateContactView: View {
                     Spacer()
                     
                         .toolbar {
-                            ToolbarItem(placement: .navigationBarTrailing) {
+                            ToolbarItem(placement: .confirmationAction) {
                                 Button("Done") {
-                                    
+                                    withAnimation {
+                                        
                                         dismiss()
+                                    }
                                 }
                                 .bold()
                                 .disabled(!isFormValid)
@@ -88,6 +90,6 @@ extension Binding {
 
 #Preview {
     UpdateContactView(contact: Contact(name: "Benia", email: "bmorganware", company: "Apple"))
-    
+        .modelContainer(for: [Contact.self])
 }
 
