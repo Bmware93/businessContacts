@@ -22,7 +22,11 @@ struct ContentView: View {
         if searchText.isEmpty {
             return contacts
         } else {
-            return contacts.filter{$0.name!.contains(searchText)}
+            return contacts.filter { contact in
+                let nameMatch = contact.name?.localizedCaseInsensitiveContains(searchText) ?? false
+                let companyMatch = contact.company?.localizedCaseInsensitiveContains(searchText) ?? false
+                return nameMatch || companyMatch
+            }
         }
     }
     
