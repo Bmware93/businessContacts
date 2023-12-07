@@ -11,10 +11,10 @@ import SwiftData
 
 struct ContentView: View {
     
-    @State var addContactSheetShowing = false
     @Environment(\.modelContext) var context
-    @Query(sort: \Contact.name) var contacts: [Contact] 
+    @Query(sort: \Contact.name) var contacts: [Contact]
     
+    @State var addContactSheetShowing = false
     @State private var contactToEdit: Contact?
     @State private var searchText = ""
     
@@ -25,14 +25,12 @@ struct ContentView: View {
             return contacts.filter{$0.name!.contains(searchText)}
         }
     }
- 
-  
     
     var body: some View {
         NavigationStack {
             VStack {
                 List {
-                    ForEach(contacts) { contact in
+                    ForEach(searchResults) { contact in
                         ContactView(contact: contact)
                             .onTapGesture {
                                 contactToEdit = contact
@@ -42,7 +40,7 @@ struct ContentView: View {
                         for index in indexSet {
                             context.delete(contacts[index])
                         }
-                            
+                        
                     }
                     
                 }
@@ -59,7 +57,7 @@ struct ContentView: View {
                         Button("Add Contact", systemImage: "plus") {
                             addContactSheetShowing.toggle()
                         }
-                   
+                        
                     }
                     
                 }
@@ -76,22 +74,27 @@ struct ContentView: View {
                         })
                         .offset(y: -60)
                     }
-            }
-                if !contacts.isEmpty {
+                    if searchResults.isEmpty && !contacts.isEmpty {
+                        ContentUnavailableView.search
+                            .offset(y: -40)
+                    }
+                }
+                //additional content to show number of contacts stored
+                if !contacts.isEmpty && !searchResults.isEmpty {
                     Text("\(contacts.count) Contacts")
                         .bold()
                     
                     Spacer()
                 }
-            
-                    
+                
+                
             }
             
             
             
         }
         
-   
+        
     }
 }
 
