@@ -23,8 +23,8 @@ struct ContentView: View {
             return contacts
         } else {
             return contacts.filter { contact in
-                let nameMatch = contact.name?.localizedStandardContains(searchText) ?? false
-                let companyMatch = contact.company?.localizedStandardContains(searchText) ?? false
+                let nameMatch = contact.name?.lowercased().contains(searchText.lowercased()) ?? false
+                let companyMatch = contact.company?.lowercased().contains(searchText.lowercased()) ?? false
                 return nameMatch || companyMatch
             }
         }
@@ -51,7 +51,7 @@ struct ContentView: View {
                 .listStyle(.plain)
                 .listSectionSeparator(Visibility.hidden)
                 .navigationTitle("Business Contacts")
-                .searchable(text: $searchText)
+                .searchable(text: $searchText, placement: .navigationBarDrawer(displayMode: .always))
                 .sheet(isPresented: $addContactSheetShowing) { AddNewContact() }
                 .sheet(item: $contactToEdit) { contact in
                     UpdateContactView(contact: contact)
