@@ -12,7 +12,7 @@ import SwiftData
 struct businessContactsApp: App {
     var body: some Scene {
         WindowGroup {
-           ContentView()
+           ImagePicker()
         }
         .modelContainer(for: [Contact.self])
     }
