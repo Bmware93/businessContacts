@@ -91,6 +91,15 @@ struct AddNewContact: View {
                 }
                 .navigationTitle("New Contact")
                 .navigationBarTitleDisplayMode(.inline)
+                .onChange(of: contactAvatarItem) {
+                    Task {
+                        if let loaded  = try? await contactAvatarItem?.loadTransferable(type: Image.self) {
+                            contactAvatarImage = loaded
+                        } else {
+                            print("Failed to Load Image")
+                        }
+                    }
+                }
             }
             
         }
