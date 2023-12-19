@@ -15,8 +15,8 @@ struct ContactView: View {
     
     var body: some View {
         VStack(alignment: .leading, spacing: 3) {
-            Text("**Name:** \(contact.name ?? "Unknown")")
-            Text("**Email:** \(contact.email ?? "Unknown")")
+            Text("**Name:** \(contact.name ?? "John Doe")")
+            Text("**Email:** \(contact.email ?? "Jdoe@gmail.com")")
             Divider()
             Text("**Company:** \(contact.company ?? "Unknown")")
         

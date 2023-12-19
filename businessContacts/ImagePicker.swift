@@ -22,6 +22,7 @@ struct ImagePicker: View {
                 .scaledToFit()
                 .frame(width: 300, height: 300)
         }
+        .buttonStyle(.bordered)
         .onChange(of: avatarItem) {
             Task {
                 if let loaded = try? await avatarItem?.loadTransferable(type: Image.self) {

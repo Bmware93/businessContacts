@@ -7,6 +7,7 @@
 
 import SwiftUI
 import SwiftData
+import PhotosUI
 
 struct AddNewContact: View {
     
@@ -17,6 +18,8 @@ struct AddNewContact: View {
     @State var name: String = ""
     @State var email: String = ""
     @State var company: String = ""
+    @State private var contactAvatarItem: PhotosPickerItem?
+    @State private var contactAvatarImage: Image?
     
     var isFormValid: Bool {
         return !name.isEmpty && !email.isEmpty && !company.isEmpty
@@ -29,17 +32,23 @@ struct AddNewContact: View {
                     .ignoresSafeArea(.all)
                 
                 VStack {
-                    Image(systemName:"person.crop.circle.fill")
-                        .font(.system(size: 130))
-                        .foregroundColor(.gray)
-                        .padding(.top, 30)
-
-                    
-                    Button("Add Photo") {
-                        //code to add photo to go here
+                    if let contactAvatarImage {
+                        
+                        contactAvatarImage
+                            .resizable()
+                            .scaledToFit()
+                            .frame(width: 300, height: 300)
+                        
+                    } else {
+                        Image(systemName:"person.crop.circle.fill")
+                            .font(.system(size: 130))
+                            .foregroundColor(.gray)
+                            .padding(.top, 30)
                     }
-                    .buttonStyle(.bordered)
-                    .buttonBorderShape(.capsule)
+                    
+                    PhotosPicker("Add Photo", selection: $contactAvatarItem, matching: .images)
+                        .buttonStyle(.bordered)
+                        .buttonBorderShape(.capsule)
                     
                     Form {
                         TextField("Full Name", text: $name)
@@ -82,6 +91,15 @@ struct AddNewContact: View {
                 }
                 .navigationTitle("New Contact")
                 .navigationBarTitleDisplayMode(.inline)
+                .onChange(of: contactAvatarItem) {
+                    Task {
+                        if let loaded  = try? await contactAvatarItem?.loadTransferable(type: Image.self) {
+                            contactAvatarImage = loaded
+                        } else {
+                            print("Failed to Load Image")
+                        }
+                    }
+                }
             }
             
         }
