@@ -117,8 +117,8 @@
 				1A23BFE12B1D453F00F60FC4 /* UpdateContactView.swift */,
 				1A23BFE32B20FDFE00F60FC4 /* SearchBarFilterView.swift */,
 				1A23BFE52B23C8CB00F60FC4 /* ImagePicker.swift */,
-				1A1FA5E12A9922D400B268C7 /* Assets.xcassets */,
 				1A1FA5E62A9922D400B268C7 /* businessContacts.entitlements */,
+				1A1FA5E12A9922D400B268C7 /* Assets.xcassets */,
 				1A1FA5E32A9922D400B268C7 /* Preview Content */,
 			);
 			path = businessContacts;
