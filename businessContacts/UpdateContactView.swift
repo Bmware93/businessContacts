@@ -7,6 +7,7 @@
 
 import SwiftUI
 import SwiftData
+import PhotosUI
 
 
 struct UpdateContactView: View {
@@ -89,7 +90,7 @@ extension Binding {
 }
 
 #Preview {
-    UpdateContactView(contact: Contact(name: "Benia", email: "bmorganware", company: "Apple"))
+    UpdateContactView(contact: Contact(name: "Benia", email: "bmorganware", company: "Apple", contactImageData: nil))
         .modelContainer(for: [Contact.self])
 }
 
