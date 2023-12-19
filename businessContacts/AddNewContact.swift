@@ -19,7 +19,7 @@ struct AddNewContact: View {
     @State var email: String = ""
     @State var company: String = ""
     @State private var contactAvatarItem: PhotosPickerItem?
-    @State private var contactAvatarImage: Image?
+    @State private var contactAvatarImage: Data?
     
     var isFormValid: Bool {
         return !name.isEmpty && !email.isEmpty && !company.isEmpty
@@ -33,8 +33,8 @@ struct AddNewContact: View {
                 
                 VStack {
                     if let contactAvatarImage {
-                        
-                        contactAvatarImage
+                       let uiImage = UIImage(data: contactAvatarImage)
+                        Image(uiImage: uiImage!)
                             .resizable()
                             .scaledToFit()
                             .frame(width: 300, height: 300)
@@ -46,9 +46,21 @@ struct AddNewContact: View {
                             .padding(.top, 30)
                     }
                     
-                    PhotosPicker("Add Photo", selection: $contactAvatarItem, matching: .images)
+                    if contactAvatarImage != nil {
+                        Button("Remove Image", role: .destructive) {
+                            withAnimation {
+                                contactAvatarItem = nil
+                                contactAvatarImage = nil
+                            }
+                        }
                         .buttonStyle(.bordered)
                         .buttonBorderShape(.capsule)
+                    } else {
+                        
+                        PhotosPicker("Add Photo", selection: $contactAvatarItem, matching: .images)
+                            .buttonStyle(.bordered)
+                            .buttonBorderShape(.capsule)
+                    }
                     
                     Form {
                         TextField("Full Name", text: $name)
@@ -68,7 +80,7 @@ struct AddNewContact: View {
                                 Button("Done") {
                                     withAnimation {
                                         if isFormValid {
-                                            let newContact = Contact(name: name, email: email, company: company)
+                                            let newContact = Contact(name: name, email: email, company: company, contactImageData: contactAvatarImage)
                                             
                                             context.insert(newContact)
                                             
@@ -93,7 +105,7 @@ struct AddNewContact: View {
                 .navigationBarTitleDisplayMode(.inline)
                 .onChange(of: contactAvatarItem) {
                     Task {
-                        if let loaded  = try? await contactAvatarItem?.loadTransferable(type: Image.self) {
+                        if let loaded  = try? await contactAvatarItem?.loadTransferable(type: Data.self) {
                             contactAvatarImage = loaded
                         } else {
                             print("Failed to Load Image")

@@ -30,5 +30,5 @@ struct ContactView: View {
 }
 
 #Preview {
-    ContactView(contact: Contact(name: "Benia Morgan", email: "bmorganware@gmail.com", company: "Apple"))
+    ContactView(contact: Contact(name: "Benia Morgan", email: "bmorganware@gmail.com", company: "Apple", contactImageData: nil))
 }

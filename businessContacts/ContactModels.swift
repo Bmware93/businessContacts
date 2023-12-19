@@ -7,6 +7,7 @@
 
 import Foundation
 import SwiftData
+import SwiftUI
 
 @Model
 //Because this project is being syncing SwiftData to CloudKit it requires that
@@ -18,11 +19,13 @@ class Contact: Identifiable {
     var name: String?
     var email: String?
     var company: String?
+    var contactImageData: Data?
     
-    init(name: String?, email: String?, company: String?) {
+    init(name: String?, email: String?, company: String?, contactImageData: Data?) {
         self.name = name
         self.email = email
         self.company = company
+        self.contactImageData = contactImageData
     }
 }
 
