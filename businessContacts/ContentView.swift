@@ -18,6 +18,7 @@ struct ContentView: View {
     @State private var contactToEdit: Contact?
     @State private var searchText = ""
     
+    
     var searchResults: [Contact] {
         if searchText.isEmpty {
             return contacts
