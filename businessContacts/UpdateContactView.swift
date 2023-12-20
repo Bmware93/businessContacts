@@ -17,6 +17,7 @@ struct UpdateContactView: View {
     
     @Environment(\.dismiss) private var dismiss
     @Bindable var contact: Contact
+    @State private var contactAvatarItem: PhotosPickerItem?
     
     
    var isFormValid: Bool {
@@ -30,18 +31,32 @@ struct UpdateContactView: View {
                     .ignoresSafeArea()
                 
                 VStack {
-                    Image(systemName:"person.crop.circle.fill")
-                        .font(.system(size: 130))
-                        .foregroundColor(.gray)
-                        .padding(.top, 30)
-                    
-                    Button("Add Photo") {
-                        //Code to update photo to go here
-                    }
-                    .buttonStyle(.bordered)
-                    .buttonBorderShape(.capsule)
+                    if contact.contactImageData != nil {
+                        let uiImage = UIImage(data: contact.contactImageData!)
+                        Image(uiImage: uiImage!)
+                            .resizable()
+                            .scaledToFit()
+                            .frame(width: 300, height: 300)
                         
-                    
+                        Button("Remove Image", role: .destructive) {
+                            withAnimation {
+                                contactAvatarItem = nil
+                                contact.contactImageData = nil
+                            }
+                        }
+                        .buttonStyle(.bordered)
+                        .buttonBorderShape(.capsule)
+                        
+                    } else {
+                        Image(systemName:"person.crop.circle.fill")
+                            .font(.system(size: 130))
+                            .foregroundColor(.gray)
+                            .padding(.top, 30)
+                        
+                        PhotosPicker("Add Photo", selection: $contactAvatarItem, matching: .images)
+                            .buttonStyle(.bordered)
+                            .buttonBorderShape(.capsule)
+                    }
                     
                     VStack {
                         Form {
@@ -91,6 +106,6 @@ extension Binding {
 
 #Preview {
     let preview = previewContainer([Contact.self])
-    return UpdateContactView(contact: Contact(name: "Benia", email: "bmorganware@gmail.com", company: "Apple Developer Academy", contactImageData: nil)).modelContainer(preview.container)
+    return UpdateContactView(contact: Contact(name: "", email: "", company: "", contactImageData: nil)).modelContainer(preview.container)
 }
 
