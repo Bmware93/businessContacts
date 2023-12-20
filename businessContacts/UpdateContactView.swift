@@ -90,7 +90,7 @@ extension Binding {
 }
 
 #Preview {
-    UpdateContactView(contact: Contact(name: "Benia", email: "bmorganware", company: "Apple", contactImageData: nil))
-        .modelContainer(for: [Contact.self])
+    let preview = previewContainer([Contact.self])
+    return UpdateContactView(contact: Contact(name: "Benia", email: "bmorganware@gmail.com", company: "Apple Developer Academy", contactImageData: nil)).modelContainer(preview.container)
 }
 
