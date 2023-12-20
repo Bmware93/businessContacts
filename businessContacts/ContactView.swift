@@ -30,5 +30,6 @@ struct ContactView: View {
 }
 
 #Preview {
-    ContactView(contact: Contact(name: "Benia Morgan", email: "bmorganware@gmail.com", company: "Apple", contactImageData: nil))
+    let preview = previewContainer([Contact.self])
+    return ContactView( contact: Contact(name: "Benia", email: "bmorganware@gmail.com", company: "Apple Developer Academy", contactImageData: nil)).modelContainer(preview.container)
 }

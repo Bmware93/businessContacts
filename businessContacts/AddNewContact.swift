@@ -118,8 +118,7 @@ struct AddNewContact: View {
     }
 }
 
-struct AddNewContact_Previews: PreviewProvider {
-    static var previews: some View {
-        AddNewContact()
-    }
+#Preview {
+    let preview = previewContainer([Contact.self])
+    return AddNewContact().modelContainer(preview.container)
 }
