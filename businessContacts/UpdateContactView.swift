@@ -88,6 +88,15 @@ struct UpdateContactView: View {
                 }
                 .navigationTitle("Update Contact")
                 .navigationBarTitleDisplayMode(.inline)
+                .onChange(of: contactAvatarItem) {
+                    Task {
+                        if let loaded  = try? await contactAvatarItem?.loadTransferable(type: Data.self) {
+                            contact.contactImageData = loaded
+                        } else {
+                            print("Failed to Load Image")
+                        }
+                    }
+                }
             }
             
         }
