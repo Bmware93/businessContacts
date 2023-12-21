@@ -18,7 +18,7 @@ struct ContactView: View {
             Text("**Name:** \(contact.name ?? "John Doe")")
             Text("**Email:** \(contact.email ?? "Jdoe@gmail.com")")
             Divider()
-            Text("**Company:** \(contact.company ?? "Unknown")")
+            Text("**Company:** \(contact.company ?? "")")
         
         }
         .frame(maxWidth: .infinity,
