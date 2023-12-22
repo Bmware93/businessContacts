@@ -35,10 +35,10 @@ struct ContentView: View {
             VStack {
                 List {
                     ForEach(searchResults) { contact in
+                        NavigationLink(value: contact) {
                         ContactCellView(contact: contact)
-                            .onTapGesture {
-                                contactToEdit = contact
-                            }
+                        }
+                            
                     }
                     .onDelete { indexSet in
                         for index in indexSet {
@@ -50,6 +50,9 @@ struct ContentView: View {
                 }
                 .listStyle(.plain)
                 .listSectionSeparator(Visibility.hidden)
+                .navigationDestination(for: Contact.self) { contact in
+                    ContactPageView(contact: contact)
+                }
                 .navigationTitle("Business Contacts")
                 .searchable(text: $searchText, placement: .navigationBarDrawer(displayMode: .always))
                 .sheet(isPresented: $addContactSheetShowing) { AddNewContact() }

@@ -7,7 +7,7 @@
 
 import SwiftUI
 import SwiftData
-import PhotosUI
+//import PhotosUI
 
 struct ContactPageView: View {
     @Environment(\.modelContext) var context
@@ -15,15 +15,25 @@ struct ContactPageView: View {
     
     @Environment(\.dismiss) private var dismiss
     @Bindable var contact: Contact
-    @State private var contactAvatarItem: PhotosPickerItem?
+    //@State private var contactAvatarItem: PhotosPickerItem?
     
     var body: some View {
-        NavigationStack {
+        //NavigationStack {
             VStack {
-                Image(systemName: "person.crop.circle.fill")
-                    .font(.system(size: 130))
-                    .foregroundColor(.gray)
-                    .padding(.top, 30)
+                if contact.contactImageData != nil {
+                    let uiImage = UIImage(data: contact.contactImageData!)
+                    Image(uiImage: uiImage!)
+                        .resizable()
+                        .scaledToFit()
+                        .frame(width: 300, height: 300)
+                } else {
+                    
+                    Image(systemName: "person.crop.circle.fill")
+                        .font(.system(size: 130))
+                        .foregroundColor(.gray)
+                        .padding(.top, 30)
+                }
+ 
                 
                 Text(contact.name ?? "")
                     .font(.largeTitle)
@@ -67,7 +77,7 @@ struct ContactPageView: View {
             }
         }
     }
-}
+//}
 
 #Preview {
     let preview = previewContainer([Contact.self])
