@@ -6,8 +6,17 @@
 //
 
 import SwiftUI
+import SwiftData
+import PhotosUI
 
 struct ContactPageView: View {
+    @Environment(\.modelContext) var context
+    
+    
+    @Environment(\.dismiss) private var dismiss
+    @Bindable var contact: Contact
+    @State private var contactAvatarItem: PhotosPickerItem?
+    
     var body: some View {
         NavigationStack {
             VStack {
@@ -16,10 +25,10 @@ struct ContactPageView: View {
                     .foregroundColor(.gray)
                     .padding(.top, 30)
                 
-                Text("Pharaoh Debold")
+                Text(contact.name ?? "")
                     .font(.largeTitle)
                 
-                Text("Apple")
+                Text(contact.company ?? "")
                     .font(.title2)
                     .fontWeight(.light)
                 
@@ -27,31 +36,40 @@ struct ContactPageView: View {
                     Section {
                         HStack {
                             VStack(alignment: .leading, spacing: 5) {
-                            
+                                
                                 Text("mobile")
                                     .font(.caption2)
                                 
                                 Text("+ 1 (702) 559-3205")
                                     .listRowSeparator(.hidden)
                                     .foregroundStyle(.blue)
-                    
                             }
-
+                            
                         }
- 
+                        
                     }
                     
                     Section {
-                       
+                        HStack {
+                            VStack(alignment: .leading, spacing: 5) {
+                                Text("email")
+                                    .font(.caption2)
+                                
+                                Text(contact.email ?? "")
+                            }
+                            
+                        }
+                        
                     }
+                    
+                    
                 }
-                
-                
             }
         }
     }
 }
 
 #Preview {
-    ContactPageView()
+    let preview = previewContainer([Contact.self])
+    return ContactPageView(contact: Contact(name: "Pharaoh Debold", email: "pdebold19@gmail.com", company: "Apple", contactImageData: nil)).modelContainer(preview.container)
 }
