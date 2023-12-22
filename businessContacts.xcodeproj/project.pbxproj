@@ -14,13 +14,14 @@
 		1A1FA5F02A9922D500B268C7 /* businessContactsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A1FA5EF2A9922D500B268C7 /* businessContactsTests.swift */; };
 		1A1FA5FA2A9922D500B268C7 /* businessContactsUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A1FA5F92A9922D500B268C7 /* businessContactsUITests.swift */; };
 		1A1FA5FC2A9922D500B268C7 /* businessContactsUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A1FA5FB2A9922D500B268C7 /* businessContactsUITestsLaunchTests.swift */; };
-		1A1FA6092A99244A00B268C7 /* ContactView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A1FA6082A99244A00B268C7 /* ContactView.swift */; };
+		1A1FA6092A99244A00B268C7 /* ContactCellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A1FA6082A99244A00B268C7 /* ContactCellView.swift */; };
 		1A1FA60B2A9A4D2300B268C7 /* ContactModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A1FA60A2A9A4D2300B268C7 /* ContactModels.swift */; };
 		1A1FA60F2A9AA2EE00B268C7 /* AddNewContact.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A1FA60E2A9AA2ED00B268C7 /* AddNewContact.swift */; };
 		1A23BFE22B1D453F00F60FC4 /* UpdateContactView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A23BFE12B1D453F00F60FC4 /* UpdateContactView.swift */; };
 		1A23BFE42B20FDFE00F60FC4 /* SearchBarFilterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A23BFE32B20FDFE00F60FC4 /* SearchBarFilterView.swift */; };
 		1A23BFE62B23C8CB00F60FC4 /* ImagePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A23BFE52B23C8CB00F60FC4 /* ImagePicker.swift */; };
 		1A23BFE82B333FD300F60FC4 /* previewContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A23BFE72B333FD300F60FC4 /* previewContainer.swift */; };
+		1A23BFEB2B35E0B400F60FC4 /* ContactPageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A23BFEA2B35E0B400F60FC4 /* ContactPageView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -52,13 +53,14 @@
 		1A1FA5F52A9922D500B268C7 /* businessContactsUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = businessContactsUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		1A1FA5F92A9922D500B268C7 /* businessContactsUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = businessContactsUITests.swift; sourceTree = "<group>"; };
 		1A1FA5FB2A9922D500B268C7 /* businessContactsUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = businessContactsUITestsLaunchTests.swift; sourceTree = "<group>"; };
-		1A1FA6082A99244A00B268C7 /* ContactView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactView.swift; sourceTree = "<group>"; };
+		1A1FA6082A99244A00B268C7 /* ContactCellView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactCellView.swift; sourceTree = "<group>"; };
 		1A1FA60A2A9A4D2300B268C7 /* ContactModels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactModels.swift; sourceTree = "<group>"; };
 		1A1FA60E2A9AA2ED00B268C7 /* AddNewContact.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddNewContact.swift; sourceTree = "<group>"; };
 		1A23BFE12B1D453F00F60FC4 /* UpdateContactView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpdateContactView.swift; sourceTree = "<group>"; };
 		1A23BFE32B20FDFE00F60FC4 /* SearchBarFilterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchBarFilterView.swift; sourceTree = "<group>"; };
 		1A23BFE52B23C8CB00F60FC4 /* ImagePicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagePicker.swift; sourceTree = "<group>"; };
 		1A23BFE72B333FD300F60FC4 /* previewContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = previewContainer.swift; sourceTree = "<group>"; };
+		1A23BFEA2B35E0B400F60FC4 /* ContactPageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactPageView.swift; sourceTree = "<group>"; };
 		1AF4EFB62B1929D200027548 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -153,7 +155,8 @@
 			isa = PBXGroup;
 			children = (
 				1A1FA5DF2A9922D300B268C7 /* ContentView.swift */,
-				1A1FA6082A99244A00B268C7 /* ContactView.swift */,
+				1A1FA6082A99244A00B268C7 /* ContactCellView.swift */,
+				1A23BFEA2B35E0B400F60FC4 /* ContactPageView.swift */,
 				1A1FA60E2A9AA2ED00B268C7 /* AddNewContact.swift */,
 				1A23BFE12B1D453F00F60FC4 /* UpdateContactView.swift */,
 			);
@@ -292,10 +295,11 @@
 			files = (
 				1A23BFE42B20FDFE00F60FC4 /* SearchBarFilterView.swift in Sources */,
 				1A1FA5E02A9922D300B268C7 /* ContentView.swift in Sources */,
-				1A1FA6092A99244A00B268C7 /* ContactView.swift in Sources */,
+				1A1FA6092A99244A00B268C7 /* ContactCellView.swift in Sources */,
 				1A1FA60B2A9A4D2300B268C7 /* ContactModels.swift in Sources */,
 				1A23BFE82B333FD300F60FC4 /* previewContainer.swift in Sources */,
 				1A1FA5DE2A9922D300B268C7 /* businessContactsApp.swift in Sources */,
+				1A23BFEB2B35E0B400F60FC4 /* ContactPageView.swift in Sources */,
 				1A23BFE62B23C8CB00F60FC4 /* ImagePicker.swift in Sources */,
 				1A23BFE22B1D453F00F60FC4 /* UpdateContactView.swift in Sources */,
 				1A1FA60F2A9AA2EE00B268C7 /* AddNewContact.swift in Sources */,
