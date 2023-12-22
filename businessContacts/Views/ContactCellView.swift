@@ -8,7 +8,7 @@
 import SwiftUI
 import SwiftData
 
-struct ContactView: View {
+struct ContactCellView: View {
     @Environment(\.modelContext) var context
     
     let contact: Contact
@@ -31,5 +31,5 @@ struct ContactView: View {
 
 #Preview {
     let preview = previewContainer([Contact.self])
-    return ContactView( contact: Contact(name: "Benia", email: "bmorganware@gmail.com", company: "Apple Developer Academy", contactImageData: nil)).modelContainer(preview.container)
+    return ContactCellView( contact: Contact(name: "Benia", email: "bmorganware@gmail.com", company: "Apple Developer Academy", contactImageData: nil)).modelContainer(preview.container)
 }

@@ -35,7 +35,7 @@ struct ContentView: View {
             VStack {
                 List {
                     ForEach(searchResults) { contact in
-                        ContactView(contact: contact)
+                        ContactCellView(contact: contact)
                             .onTapGesture {
                                 contactToEdit = contact
                             }

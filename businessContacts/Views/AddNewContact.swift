@@ -13,10 +13,12 @@ struct AddNewContact: View {
     
     @Environment(\.modelContext) var context
     
-    
     @Environment(\.dismiss) private var dismiss
     @State private var contactAvatarItem: PhotosPickerItem?
-    @State private var contact = Contact(name: "", email: "", company: "", contactImageData: nil)
+    @State private var contact = Contact(name: "", 
+                                         email: "",
+                                         company: "",
+                                         contactImageData: nil)
     
     var isFormValid: Bool {
         return !contact.name!.isEmpty && !contact.email!.isEmpty && !contact.company!.isEmpty
