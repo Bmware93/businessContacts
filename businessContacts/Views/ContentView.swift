@@ -15,7 +15,7 @@ struct ContentView: View {
     @Query(sort: \Contact.name) var contacts: [Contact]
     
     @State var addContactSheetShowing = false
-    @State private var contactToEdit: Contact?
+
     @State private var searchText = ""
     
     var searchResults: [Contact] {
@@ -56,9 +56,7 @@ struct ContentView: View {
                 .navigationTitle("Business Contacts")
                 .searchable(text: $searchText, placement: .navigationBarDrawer(displayMode: .always))
                 .sheet(isPresented: $addContactSheetShowing) { AddNewContact() }
-                .sheet(item: $contactToEdit) { contact in
-                    UpdateContactView(contact: contact)
-                }
+
                 .toolbar {
                     if !contacts.isEmpty {
                         Button("Add Contact", systemImage: "plus") {

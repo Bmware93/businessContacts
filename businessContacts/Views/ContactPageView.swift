@@ -7,7 +7,6 @@
 
 import SwiftUI
 import SwiftData
-//import PhotosUI
 
 struct ContactPageView: View {
     @Environment(\.modelContext) var context
@@ -15,10 +14,11 @@ struct ContactPageView: View {
     
     @Environment(\.dismiss) private var dismiss
     @Bindable var contact: Contact
-    //@State private var contactAvatarItem: PhotosPickerItem?
+    @State private var contactToEdit: Contact?
+
     
     var body: some View {
-        //NavigationStack {
+  
             VStack {
                 if contact.contactImageData != nil {
                     let uiImage = UIImage(data: contact.contactImageData!)
@@ -33,7 +33,6 @@ struct ContactPageView: View {
                         .foregroundColor(.gray)
                         .padding(.top, 30)
                 }
- 
                 
                 Text(contact.name ?? "")
                     .font(.largeTitle)
@@ -75,9 +74,18 @@ struct ContactPageView: View {
                     
                 }
             }
+            .sheet(item: $contactToEdit) { contact in
+                UpdateContactView(contact: contact)
+            }
+            .toolbar {
+                ToolbarItem(placement: .primaryAction) {
+                    Button("Edit") {
+                        contactToEdit = contact
+                    }
+                }
+            }
         }
     }
-//}
 
 #Preview {
     let preview = previewContainer([Contact.self])
