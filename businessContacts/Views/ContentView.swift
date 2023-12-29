@@ -55,6 +55,12 @@ struct ContentView: View {
                 }
                 .navigationTitle("Business Contacts")
                 .searchable(text: $searchText, placement: .navigationBarDrawer(displayMode: .always))
+                .overlay {
+                    if searchResults.isEmpty && !contacts.isEmpty {
+                        ContentUnavailableView.search(text: searchText)
+                            .offset(y: -40)
+                    }
+                }
                 .sheet(isPresented: $addContactSheetShowing) { AddNewContact() }
 
                 .toolbar {
@@ -67,6 +73,7 @@ struct ContentView: View {
                     
                 }
                 .overlay {
+                    //MARK: Contacts empty state view
                     if contacts.isEmpty {
                         ContentUnavailableView(label: {
                             Label("No Contacts to Display", systemImage: "person.fill.questionmark")
@@ -79,10 +86,7 @@ struct ContentView: View {
                         })
                         .offset(y: -60)
                     }
-                    if searchResults.isEmpty && !contacts.isEmpty {
-                        ContentUnavailableView.search
-                            .offset(y: -40)
-                    }
+               
                 }
                 //additional content to show number of contacts stored
                 if !contacts.isEmpty && !searchResults.isEmpty {
