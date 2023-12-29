@@ -11,8 +11,6 @@ import SwiftData
 struct ContactPageView: View {
     @Environment(\.modelContext) var context
     
-    
-    @Environment(\.dismiss) private var dismiss
     @Bindable var contact: Contact
     @State private var contactToEdit: Contact?
 
@@ -24,12 +22,13 @@ struct ContactPageView: View {
                     let uiImage = UIImage(data: contact.contactImageData!)
                     Image(uiImage: uiImage!)
                         .resizable()
+                        .clipShape(Circle())
                         .scaledToFit()
                         .frame(width: 300, height: 300)
                 } else {
                     
                     Image(systemName: "person.crop.circle.fill")
-                        .font(.system(size: 130))
+                        .font(.system(size: 200))
                         .foregroundColor(.gray)
                         .padding(.top, 30)
                 }
@@ -82,6 +81,8 @@ struct ContactPageView: View {
                     Button("Edit") {
                         contactToEdit = contact
                     }
+                    .buttonStyle(.bordered)
+                    .buttonBorderShape(.capsule)
                 }
             }
         }

@@ -37,6 +37,7 @@ struct AddNewContact: View {
                             let uiImage = UIImage(data: contact.contactImageData!)
                             Image(uiImage: uiImage!)
                                 .resizable()
+                                .clipShape(Circle())
                                 .scaledToFit()
                                 .frame(width: 300, height: 300)
                             
@@ -51,7 +52,7 @@ struct AddNewContact: View {
                             
                         } else {
                             Image(systemName:"person.crop.circle.fill")
-                                .font(.system(size: 130))
+                                .font(.system(size: 200))
                                 .foregroundColor(.gray)
                                 .padding(.top, 30)
                             
